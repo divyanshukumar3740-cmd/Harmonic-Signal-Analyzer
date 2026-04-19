@@ -51,4 +51,5 @@ if __name__ == "__main__":
     print(f"  Dominant freq    : {freqs[np.argmax(amplitude)]:.4f} Hz")
     print(f"{'='*45}\n")
 
-    plot_results(t, x, freqs, amplitude, condition, damping_ratio, poles)
+    filename = f"{condition.lower().replace(' ', '_')}_analysis.png"
+    plot_results(t, x, freqs, amplitude, condition, damping_ratio, poles, filename=filename)

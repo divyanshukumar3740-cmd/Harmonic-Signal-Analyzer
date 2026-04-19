@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-def plot_results(t, x, freqs, amplitude, condition, damping_ratio, poles):
+def plot_results(t, x, freqs, amplitude, condition, damping_ratio, poles, filename="analysis.png"):
     fig, axes = plt.subplots(2, 2, figsize=(14, 9))
     fig.suptitle(f"Harmonic Signal Analyzer  |  {condition}  |  ζ = {damping_ratio:.3f}", fontsize=14, fontweight='bold')
 
@@ -46,6 +46,7 @@ def plot_results(t, x, freqs, amplitude, condition, damping_ratio, poles):
 
     plt.tight_layout()
     os.makedirs("outputs", exist_ok=True)
-    plt.savefig("outputs/analysis.png", dpi=150, bbox_inches='tight')
+    plt.savefig(f"outputs/{filename}", dpi=150, bbox_inches='tight')
+    print(f"Plot saved to outputs/{filename}")
     print("Plot saved to outputs/analysis.png")
     plt.show()
